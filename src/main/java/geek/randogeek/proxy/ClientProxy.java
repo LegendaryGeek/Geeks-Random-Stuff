@@ -1,4 +1,4 @@
-package geek.randomness.proxy;
+package geek.randogeek.proxy;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;

@@ -1,4 +1,4 @@
-package geek.randomness.proxy;
+package geek.randogeek.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

@@ -1,6 +1,6 @@
-package geek.randomness.item;
+package geek.randogeek.item;
 
-import geek.randomness.init.ModFluids;
+import geek.randogeek.init.ModFluids;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;

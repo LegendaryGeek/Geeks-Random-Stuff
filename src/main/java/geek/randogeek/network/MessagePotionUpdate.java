@@ -1,8 +1,8 @@
-package geek.randomness.network;
+package geek.randogeek.network;
 
-import geek.randomness.RandoGeek;
-import geek.randomness.caps.ExampleCapabilities;
-import geek.randomness.caps.IExampleCapability;
+import geek.randogeek.RandoGeek;
+import geek.randogeek.caps.ExampleCapabilities;
+import geek.randogeek.caps.IExampleCapability;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

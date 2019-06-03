@@ -1,6 +1,6 @@
-package geek.randomness.init;
+package geek.randogeek.init;
 
-import geek.randomness.RandoGeek;
+import geek.randogeek.RandoGeek;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;

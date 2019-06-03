@@ -1,6 +1,6 @@
-package geek.randomness.util;
+package geek.randogeek.util;
 
-import geek.randomness.RandoGeek;
+import geek.randogeek.RandoGeek;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;

@@ -1,4 +1,4 @@
-package geek.randomness.item;
+package geek.randogeek.item;
 
 import net.minecraft.item.Item;
 

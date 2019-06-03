@@ -1,10 +1,10 @@
-package geek.randomness.events;
+package geek.randogeek.events;
 
-import geek.randomness.RandoGeek;
-import geek.randomness.block.GeoStone;
-import geek.randomness.init.ModBlocks;
-import geek.randomness.init.ModFluids;
-import geek.randomness.init.ModItems;
+import geek.randogeek.RandoGeek;
+import geek.randogeek.block.GeoStone;
+import geek.randogeek.init.ModBlocks;
+import geek.randogeek.init.ModFluids;
+import geek.randogeek.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;

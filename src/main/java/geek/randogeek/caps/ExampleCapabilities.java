@@ -1,4 +1,4 @@
-package geek.randomness.caps;
+package geek.randogeek.caps;
 
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;

@@ -1,4 +1,4 @@
-package geek.randomness.fluid;
+package geek.randogeek.fluid;
 
 import javax.annotation.Nonnull;
 

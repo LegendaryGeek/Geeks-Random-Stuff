@@ -1,9 +1,9 @@
-package geek.randomness;
+package geek.randogeek;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import geek.randomness.proxy.Proxy;
+import geek.randogeek.proxy.Proxy;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -61,7 +61,7 @@ public final class RandoGeek {
 	/**
 	 *
 	 */
-	@SidedProxy(clientSide = "geek.randomness.proxy.ClientProxy", serverSide = "geek.randomness.examplemod.proxy.ServerProxy")
+	@SidedProxy(clientSide = "geek.randogeek.proxy.ClientProxy", serverSide = "geek.randogeek.examplemod.proxy.ServerProxy")
 	private static Proxy proxy = null;
 
 	/**

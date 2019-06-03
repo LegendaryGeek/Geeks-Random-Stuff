@@ -1,4 +1,4 @@
-package geek.randomness.tileentity;
+package geek.randogeek.tileentity;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;

@@ -1,7 +1,7 @@
-package geek.randomness.proxy;
+package geek.randogeek.proxy;
 
-import geek.randomness.init.ModFluids;
-import geek.randomness.init.ModItems;
+import geek.randogeek.init.ModFluids;
+import geek.randogeek.init.ModItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;

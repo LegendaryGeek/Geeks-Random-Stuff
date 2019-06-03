@@ -1,7 +1,7 @@
-package geek.randomness.init;
+package geek.randogeek.init;
 
-import geek.randomness.RandoGeek;
-import geek.randomness.item.*;
+import geek.randogeek.RandoGeek;
+import geek.randogeek.item.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;

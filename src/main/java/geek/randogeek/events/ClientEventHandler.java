@@ -1,10 +1,10 @@
-package geek.randomness.events;
+package geek.randogeek.events;
 
-import geek.randomness.RandoGeek;
-import geek.randomness.fluid.FluidStateMapper;
-import geek.randomness.init.ModBlocks;
-import geek.randomness.init.ModFluids;
-import geek.randomness.init.ModItems;
+import geek.randogeek.RandoGeek;
+import geek.randogeek.fluid.FluidStateMapper;
+import geek.randogeek.init.ModBlocks;
+import geek.randogeek.init.ModFluids;
+import geek.randogeek.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;

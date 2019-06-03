@@ -1,6 +1,6 @@
-package geek.randomness.init;
+package geek.randogeek.init;
 
-import geek.randomness.RandoGeek;
+import geek.randogeek.RandoGeek;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
