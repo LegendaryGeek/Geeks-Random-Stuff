@@ -58,9 +58,9 @@ public final class CommonEventHandler {
 	 */
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-		event.getRegistry().register(setupBlock(new GeoStone(), "geostone"));
+		event.getRegistry().register(setupBlock(ModBlocks.BlockPlastic, "blockplastic"));
 		event.getRegistry().register(setupBlock(
-				new BlockFluidClassic(ModFluids.COFFEE, Material.LAVA), "example_fluid"));
+				new BlockFluidClassic(ModFluids.COFFEE, Material.WATER), "coffee"));
 	}
 
 	/**
@@ -69,7 +69,7 @@ public final class CommonEventHandler {
 	 */
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
-		event.getRegistry().register(setupItemBlock(ModBlocks.GeoStone));
+		event.getRegistry().register(setupItemBlock(ModBlocks.BlockPlastic));
 		//event.getRegistry().register(setupItemBlock(ModBlocks.COFFEE));
 		event.getRegistry().register(setupItem(ModItems.Plastic, "plastic"));
 		event.getRegistry().register(setupItem(ModItems.plaStick, "plastick"));

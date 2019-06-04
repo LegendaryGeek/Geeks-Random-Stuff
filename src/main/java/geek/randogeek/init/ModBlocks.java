@@ -22,12 +22,12 @@ public final class ModBlocks {
 	/**
 	 *
 	 */
-	@ObjectHolder("randogeek:geostone")
-    public static final Block GeoStone = null;
+	@ObjectHolder("randogeek:blockplastic")
+	public static final Block BlockPlastic = new Block(Material.CLAY);
 
 	/**
 	 *
 	 */
-    @ObjectHolder("randogeek:coffeeblock")
+	@ObjectHolder("randogeek:coffeeblock")
 	public static final Block COFFEE = new Block(Material.WATER);
 }

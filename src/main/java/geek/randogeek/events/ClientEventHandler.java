@@ -37,7 +37,7 @@ public final class ClientEventHandler {
 	 */
 	@SubscribeEvent
 	public static void registerModels(final ModelRegistryEvent event) {
-		registerModel(Item.getItemFromBlock(ModBlocks.GeoStone));
+		registerModel(Item.getItemFromBlock(ModBlocks.BlockPlastic));
 		registerFluidRender(ModBlocks.COFFEE, ModFluids.COFFEE);
 		registerModel(ModItems.Plastic);
 		registerModel(ModItems.plaStick);
@@ -48,8 +48,8 @@ public final class ClientEventHandler {
 	 * @param item The Item.
 	 */
 	private static void registerModel(final Item item) {
-		ModelLoader.setCustomModelResourceLocation(item,
-				0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(item, 0,
+				new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 
 	/**
@@ -61,8 +61,7 @@ public final class ClientEventHandler {
 	private static void registerFluidRender(final Block block, final Fluid fluid) {
 		final Item item = Item.getItemFromBlock(block);
 		final ResourceLocation resourceLocation = new ResourceLocation(RandoGeek.MODID, fluid.getName());
-		final FluidStateMapper mapper = new FluidStateMapper(
-				resourceLocation.getNamespace() + ":" + fluid.getName());
+		final FluidStateMapper mapper = new FluidStateMapper(resourceLocation.getNamespace() + ":" + fluid.getName());
 
 		if (item != null) {
 			ModelBakery.registerItemVariants(item);
