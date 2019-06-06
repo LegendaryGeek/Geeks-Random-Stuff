@@ -79,7 +79,7 @@ public final class RandoGeek {
 	 */
 	@Mod.EventHandler
 	public static void init(final FMLInitializationEvent event) {
-		proxy.init(event);	
+		proxy.init(event);
 	}
 
 	/**

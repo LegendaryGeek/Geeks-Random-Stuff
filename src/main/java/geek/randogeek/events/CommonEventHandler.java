@@ -1,7 +1,6 @@
 package geek.randogeek.events;
 
 import geek.randogeek.RandoGeek;
-import geek.randogeek.block.GeoStone;
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.init.ModFluids;
 import geek.randogeek.init.ModItems;

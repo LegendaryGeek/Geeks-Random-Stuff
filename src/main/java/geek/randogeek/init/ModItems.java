@@ -30,4 +30,11 @@ public final class ModItems {
 	
 	@ObjectHolder("randogeek:coffeebean")
 	public static final Item CoffeeBean = new CoffeeBean();
+	
+	@ObjectHolder("randogeek:fork")
+	public static final Item Fork = new Item();
+	
+	@ObjectHolder("randogeek:forkedapple")
+	public static final Item ForkedApple = new Item();
+	
 }

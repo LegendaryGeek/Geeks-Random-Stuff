@@ -22,7 +22,7 @@ public final class ModFluids {
 	 */
 	public static final Fluid COFFEE = new Fluid("coffee",
 			new ResourceLocation(RandoGeek.MODID, "blocks/coffee_still"),
-			new ResourceLocation(RandoGeek.MODID, "blocks/coffee_flow")).setBlock(ModBlocks.COFFEE).setDensity(1).setViscosity(1).setTemperature(-300).setLuminosity(1).setUnlocalizedName(RandoGeek.MODID + "." + "coffee");
+			new ResourceLocation(RandoGeek.MODID, "blocks/coffee_flow")).setBlock(ModBlocks.COFFEE).setDensity(1).setViscosity(1).setLuminosity(1).setUnlocalizedName(RandoGeek.MODID + "." + "coffee");
 
 	/**
 	 *
