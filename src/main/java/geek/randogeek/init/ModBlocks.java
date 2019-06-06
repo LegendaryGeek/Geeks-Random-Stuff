@@ -28,6 +28,6 @@ public final class ModBlocks {
 	/**
 	 *
 	 */
-	@ObjectHolder("randogeek:coffeeblock")
+	@ObjectHolder("randogeek:coffee")
 	public static final Block COFFEE = new Block(Material.WATER);
 }
