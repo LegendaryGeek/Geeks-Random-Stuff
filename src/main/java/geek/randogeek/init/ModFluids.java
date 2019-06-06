@@ -21,7 +21,7 @@ public final class ModFluids {
 	/**
 	 *
 	 */
-	public static final Fluid COFFEE = new Fluid("coffee",
+	public final static Fluid COFFEE = new Fluid("coffee",
 			new ResourceLocation(RandoGeek.MODID, "blocks/coffee_still"),
 			new ResourceLocation(RandoGeek.MODID, "blocks/coffee_flow"));
 
@@ -31,7 +31,7 @@ public final class ModFluids {
 	public static void init() {
 		FluidRegistry.enableUniversalBucket();
 		
-		COFFEE.setBlock(ModBlocks.COFFEE);
+		//COFFEE.setBlock(ModBlocks.COFFEE);
 	 	COFFEE.setDensity(1);
 		COFFEE.setViscosity(1);
 		COFFEE.setTemperature(-300);
