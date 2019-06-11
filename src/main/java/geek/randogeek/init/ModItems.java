@@ -1,12 +1,10 @@
 package geek.randogeek.init;
 
 import geek.randogeek.RandoGeek;
-import geek.randogeek.item.CoffeeBean;
-import geek.randogeek.item.EmptyPot;
-import geek.randogeek.item.Plastic;
-import geek.randogeek.item.plaStick;
+import geek.randogeek.item.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
@@ -58,5 +56,17 @@ public final class ModItems {
 
 	@ObjectHolder("randogeek:pothandle")
 	public static final Item PotHandle = new Item();
+
+	@ObjectHolder("randogeek:caramelpopcorn")
+	public static final Item CaramelPopcorn = new CaramelPopcorn(4, "original");
+
+	@ObjectHolder("randogeek:goldcaramelpopcorn")
+	public static final Item GoldCaramelPopcorn = new CaramelPopcorn(4, "gold");
+
+	@ObjectHolder("randogeek:coffeecaramelpopcorn")
+	public static final Item CoffeeCaramelPopcorn = new CaramelPopcorn(4, "coffee");
+
+	@ObjectHolder("randogeek:lavacaramelpopcorn")
+	public static final Item LavaCaramelPopcorn = new CaramelPopcorn(4, "lava");
 
 }
