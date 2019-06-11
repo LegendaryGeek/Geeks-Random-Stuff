@@ -19,6 +19,6 @@ public class CoffeeBean extends Item {
 			entityItem.world.setBlockState(pos, ModFluids.COFFEE.getBlock().getDefaultState());
 			entityItem.setDead();
 		}
-		return false;
+		return true;
 	}
 }

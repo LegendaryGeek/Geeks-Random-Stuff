@@ -39,8 +39,17 @@ public final class ClientEventHandler {
 	public static void registerModels(final ModelRegistryEvent event) {
 		registerModel(Item.getItemFromBlock(ModBlocks.BlockPlastic));
 		registerFluidRender(ModBlocks.COFFEE, ModFluids.COFFEE);
+		registerModel(ModItems.CoffeeBean);
+		registerModel(ModItems.CoffeePot);
+		registerModel(ModItems.EmptyPot);
+		registerModel(ModItems.LavaPot);
 		registerModel(ModItems.Plastic);
 		registerModel(ModItems.plaStick);
+		registerModel(ModItems.Fork);
+		registerModel(ModItems.ForkedApple);
+		registerModel(ModItems.PotBase);
+		registerModel(ModItems.PotHandle);
+		registerModel(ModItems.PotLid);
 	}
 
 	/**

@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 /**
  *
  */
-@Mod.EventBusSubscriber(value = {Side.CLIENT, Side.SERVER}, modid = RandoGeek.MODID)
+@Mod.EventBusSubscriber(value = { Side.CLIENT, Side.SERVER }, modid = RandoGeek.MODID)
 public final class CommonEventHandler {
 
 	/**
@@ -29,6 +29,13 @@ public final class CommonEventHandler {
 		//
 	}
 
+	/*
+	 * @SubscribeEvent public void getDrops(NonNullList<ItemStack> drops,
+	 * IBlockAccess world, BlockPos pos, IBlockState state, int fortune) { if
+	 * (Block.RANDOM.nextInt(8) != 0) return; ItemStack seed =
+	 * net.minecraftforge.common.ForgeHooks.getGrassSeed(Block.RANDOM, fortune); if
+	 * (!seed.isEmpty()) drops.add(seed); }
+	 */
 	/**
 	 *
 	 * @param event The Event.
@@ -58,8 +65,7 @@ public final class CommonEventHandler {
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		event.getRegistry().register(setupBlock(ModBlocks.BlockPlastic, "blockplastic"));
-		event.getRegistry().register(setupBlock(
-				new BlockFluidClassic(ModFluids.COFFEE, Material.WATER), "coffee"));
+		event.getRegistry().register(setupBlock(new BlockFluidClassic(ModFluids.COFFEE, Material.WATER), "coffee"));
 	}
 
 	/**
@@ -69,10 +75,18 @@ public final class CommonEventHandler {
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
 		event.getRegistry().register(setupItemBlock(ModBlocks.BlockPlastic));
-		//event.getRegistry().register(setupItemBlock(ModBlocks.COFFEE));
+		// event.getRegistry().register(setupItemBlock(ModBlocks.COFFEE));
 		event.getRegistry().register(setupItem(ModItems.Plastic, "plastic"));
+		event.getRegistry().register(setupItem(ModItems.CoffeePot, "coffeepot"));
+		event.getRegistry().register(setupItem(ModItems.EmptyPot, "emptypot"));
+		event.getRegistry().register(setupItem(ModItems.LavaPot, "lavapot"));
 		event.getRegistry().register(setupItem(ModItems.plaStick, "plastick"));
 		event.getRegistry().register(setupItem(ModItems.CoffeeBean, "coffeebean"));
+		event.getRegistry().register(setupItem(ModItems.Fork, "fork"));
+		event.getRegistry().register(setupItem(ModItems.ForkedApple, "forkedapple"));
+		event.getRegistry().register(setupItem(ModItems.PotBase, "potbase"));
+		event.getRegistry().register(setupItem(ModItems.PotHandle, "pothandle"));
+		event.getRegistry().register(setupItem(ModItems.PotLid, "potlid"));
 	}
 
 	/**
@@ -87,7 +101,7 @@ public final class CommonEventHandler {
 	/**
 	 *
 	 * @param block The Block.
-	 * @param name The Name.
+	 * @param name  The Name.
 	 * @return The Block
 	 */
 	private static Block setupBlock(final Block block, final String name) {

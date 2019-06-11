@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " l",
+    "hb"
+  ],
+  "key": {
+    "l": {
+      "item": "randogeek:potlid"
+    },
+	"h": {
+	 "item": "randogeek:pothandle"
+	},
+	"b":{
+	"item": "randogeek:potbase"
+	}
+  },
+  "result": {
+    "item": "randogeek:emptypot"
+  }
+}

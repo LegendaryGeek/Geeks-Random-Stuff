@@ -4,7 +4,6 @@ import geek.randogeek.RandoGeek;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
 /**
  *
@@ -29,7 +28,7 @@ public final class ModFluids {
 	 *
 	 */
 	public static void init() {
-		FluidRegistry.enableUniversalBucket();
+		
 		
 		//COFFEE.setBlock(ModBlocks.COFFEE);
 	 	COFFEE.setDensity(1);

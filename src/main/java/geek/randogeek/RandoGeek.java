@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import geek.randogeek.proxy.Proxy;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -61,7 +62,7 @@ public final class RandoGeek {
 	/**
 	 *
 	 */
-	@SidedProxy(clientSide = "geek.randogeek.proxy.ClientProxy", serverSide = "geek.randogeek.examplemod.proxy.ServerProxy")
+	@SidedProxy(clientSide = "geek.randogeek.proxy.ClientProxy", serverSide = "geek.randogeek.proxy.ServerProxy")
 	private static Proxy proxy = null;
 
 	/**
@@ -70,6 +71,7 @@ public final class RandoGeek {
 	 */
 	@Mod.EventHandler
 	public static void preInit(final FMLPreInitializationEvent event) {
+		FluidRegistry.enableUniversalBucket();
 		proxy.preInit(event);
 	}
 

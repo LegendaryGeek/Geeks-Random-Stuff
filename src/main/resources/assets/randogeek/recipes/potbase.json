@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "g g",
+    "ngn"
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:glass"
+    },
+	"n": {
+	 "item": "minecraft:iron_nugget"
+	}
+  },
+  "result": {
+    "item": "randogeek:potbase"
+  }
+}

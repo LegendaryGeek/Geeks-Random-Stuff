@@ -1,5 +1,10 @@
 item.randogeek.coffeebean.name=Coffee Bean
 item.randogeek.plastic.name=Plastic
 item.randogeek.plastick.name=PlaStick
+item.randogeek.fork.name=Fork
+item.randogeek.forkedapple.name=Forked Apple
+item.randogeek.coffeepot.name=Coffee pot
+item.randogeek.emptypot.name=Empty Pot
+item.randogeek.lavapot.name=Lava Pot
 
 tile.randogeek.blockplastic.name=Plastic Block

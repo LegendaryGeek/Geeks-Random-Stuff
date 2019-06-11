@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "nnn"
+  ],
+  "key": {
+	"n": {
+	 "item": "minecraft:iron_nugget"
+	}
+  },
+  "result": {
+    "item": "randogeek:potlid"
+  }
+}
