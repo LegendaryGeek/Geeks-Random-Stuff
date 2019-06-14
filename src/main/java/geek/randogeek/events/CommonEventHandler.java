@@ -1,15 +1,26 @@
 package geek.randogeek.events;
 
+
+
 import geek.randogeek.RandoGeek;
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.init.ModFluids;
 import geek.randogeek.init.ModItems;
+import geek.randogeek.util.GeekTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.Mod;
@@ -21,7 +32,7 @@ import net.minecraftforge.fml.relauncher.Side;
  */
 @Mod.EventBusSubscriber(value = { Side.CLIENT, Side.SERVER }, modid = RandoGeek.MODID)
 public final class CommonEventHandler {
-
+	protected static java.util.Random RANDOM = new java.util.Random();
 	/**
 	 *
 	 */
@@ -29,13 +40,6 @@ public final class CommonEventHandler {
 		//
 	}
 
-	/*
-	 * @SubscribeEvent public void getDrops(NonNullList<ItemStack> drops,
-	 * IBlockAccess world, BlockPos pos, IBlockState state, int fortune) { if
-	 * (Block.RANDOM.nextInt(8) != 0) return; ItemStack seed =
-	 * net.minecraftforge.common.ForgeHooks.getGrassSeed(Block.RANDOM, fortune); if
-	 * (!seed.isEmpty()) drops.add(seed); }
-	 */
 	/**
 	 *
 	 * @param event The Event.
@@ -87,6 +91,11 @@ public final class CommonEventHandler {
 		event.getRegistry().register(setupItem(ModItems.PotBase, "potbase"));
 		event.getRegistry().register(setupItem(ModItems.PotHandle, "pothandle"));
 		event.getRegistry().register(setupItem(ModItems.PotLid, "potlid"));
+		event.getRegistry().register(setupItem(ModItems.CaramelPopcorn, "caramelpopcorn"));
+		event.getRegistry().register(setupItem(ModItems.GoldCaramelPopcorn, "goldcaramelpopcorn"));
+		event.getRegistry().register(setupItem(ModItems.CoffeeCaramelPopcorn, "coffeecaramelpopcorn"));
+		event.getRegistry().register(setupItem(ModItems.LavaCaramelPopcorn, "lavacaramelpopcorn"));
+
 	}
 
 	/**
@@ -120,6 +129,7 @@ public final class CommonEventHandler {
 		final ItemBlock itemBlock = new ItemBlock(block);
 		final ResourceLocation name = block.getRegistryName();
 		itemBlock.setRegistryName(name);
+		block.setCreativeTab(GeekTab.instance);
 
 		return itemBlock;
 	}
@@ -133,6 +143,7 @@ public final class CommonEventHandler {
 	private static Item setupItem(final Item item, final String name) {
 		item.setRegistryName(name);
 		item.setTranslationKey(RandoGeek.MODID + "." + name);
+		item.setCreativeTab(GeekTab.instance);
 
 		return item;
 	}

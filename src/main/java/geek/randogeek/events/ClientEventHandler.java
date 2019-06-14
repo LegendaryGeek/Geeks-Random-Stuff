@@ -50,6 +50,10 @@ public final class ClientEventHandler {
 		registerModel(ModItems.PotBase);
 		registerModel(ModItems.PotHandle);
 		registerModel(ModItems.PotLid);
+		registerModel(ModItems.CaramelPopcorn);
+		registerModel(ModItems.CoffeeCaramelPopcorn);
+		registerModel(ModItems.GoldCaramelPopcorn);
+		registerModel(ModItems.LavaCaramelPopcorn);
 	}
 
 	/**

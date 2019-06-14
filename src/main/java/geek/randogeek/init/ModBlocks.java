@@ -23,7 +23,7 @@ public final class ModBlocks {
 	 *
 	 */
 	@ObjectHolder("randogeek:blockplastic")
-	public static final Block BlockPlastic = new Block(Material.CLAY);
+	public static final Block BlockPlastic = new Block(Material.CLAY).setHardness(0.3f);
 
 	/**
 	 *

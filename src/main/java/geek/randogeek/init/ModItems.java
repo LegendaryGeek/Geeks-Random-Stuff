@@ -42,6 +42,15 @@ public final class ModItems {
 	@ObjectHolder("randogeek:lavapot")
 	public static final Item LavaPot = new EmptyPot(Blocks.LAVA).setContainerItem(EmptyPot);
 
+	@ObjectHolder("randogeek:emptycup")
+	public static final Item Emptycup = new EmptyCup(Blocks.AIR);
+
+	@ObjectHolder("randogeek:coffeecup")
+	public static final Item Coffeecup = new EmptyCup(ModBlocks.COFFEE).setContainerItem(Emptycup);
+
+	@ObjectHolder("randogeek:lavacup")
+	public static final Item Lavacup = new EmptyCup(Blocks.LAVA).setContainerItem(Emptycup);
+	
 	@ObjectHolder("randogeek:fork")
 	public static final Item Fork = new Item();
 
