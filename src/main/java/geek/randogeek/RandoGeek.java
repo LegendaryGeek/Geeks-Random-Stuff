@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import geek.randogeek.proxy.Proxy;
+import geek.randogeek.util.GeekTab;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -82,6 +83,7 @@ public final class RandoGeek {
 	@Mod.EventHandler
 	public static void init(final FMLInitializationEvent event) {
 		proxy.init(event);
+		GeekTab.init();	
 	}
 
 	/**

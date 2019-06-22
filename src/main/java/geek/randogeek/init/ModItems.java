@@ -1,10 +1,14 @@
 package geek.randogeek.init;
 
 import geek.randogeek.RandoGeek;
-import geek.randogeek.item.*;
+import geek.randogeek.item.CaramelPopcorn;
+import geek.randogeek.item.CoffeeBean;
+import geek.randogeek.item.EmptyCup;
+import geek.randogeek.item.EmptyPot;
+import geek.randogeek.item.Plastic;
+import geek.randogeek.item.plaStick;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
