@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "pcc",
+    "cc "
+  ],
+  "key": {
+    "p": {
+      "item": "randogeek:coffeepot"
+    },
+	"c": {
+	 "item": "randogeek:emptycup"
+	}
+  },
+  "result": {
+    "item": "randogeek:coffeecup",
+    "count": 4
+  }
+}

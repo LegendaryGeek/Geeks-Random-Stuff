@@ -25,19 +25,19 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EmptyCup extends Item {
+public class EmptyBigCup extends Item {
 	private Block containedBlock;
 	private String type;
 
-	public EmptyCup(Block ContainedBlock, String type) {
+	public EmptyBigCup(Block ContainedBlock, String type) {
 		this.containedBlock = ContainedBlock;
 		this.type = type;
-		this.setMaxStackSize(8);
+		this.setMaxStackSize(1);
 	}
-	
-	public EmptyCup(Block ContainedBlock) {
+
+	public EmptyBigCup(Block ContainedBlock) {
 		this.containedBlock = ContainedBlock;
-		this.setMaxStackSize(8);
+		this.setMaxStackSize(1);
 	}
 
 	/**
@@ -65,13 +65,15 @@ public class EmptyCup extends Item {
 		playerIn.setActiveHand(handIn);
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		if (type.equals("coffee")) {
-			playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 3500));
+			playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 3500, 4));
 		} else if (type.equals("lava")) {
 			playerIn.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 400, 1));
 			playerIn.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 6000, 0));
 			playerIn.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 6000, 0));
 			playerIn.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 2400, 3));
-		}else {
+			playerIn.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 8000, 3));
+			playerIn.addPotionEffect(new PotionEffect(MobEffects.UNLUCK, 5000, 10));
+		} else {
 			
 		}
 		itemstack.shrink(1);
@@ -85,7 +87,7 @@ public class EmptyCup extends Item {
 	@Override
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
 		EntityPlayer entityplayer = entityLiving instanceof EntityPlayer ? (EntityPlayer) entityLiving : null;
-		
+
 		if (entityplayer == null || !entityplayer.capabilities.isCreativeMode) {
 			stack.shrink(1);
 		}
@@ -111,16 +113,14 @@ public class EmptyCup extends Item {
 
 		if (entityplayer == null || !entityplayer.capabilities.isCreativeMode) {
 			if (stack.isEmpty()) {
-				return new ItemStack(ModItems.Emptycup);
+				return new ItemStack(ModItems.EmptyBigCup);
 			}
 
 			if (entityplayer != null) {
-				entityplayer.inventory.addItemStackToInventory(new ItemStack(ModItems.Emptycup));
+				entityplayer.inventory.addItemStackToInventory(new ItemStack(ModItems.EmptyBigCup));
 			}
 		}
 
 		return stack;
 	}
-
-	
 }

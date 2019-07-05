@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "n  ",
+    "gcg",
+	" g "
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:glass"
+    },
+	"n": {
+	 "item": "minecraft:iron_nugget"
+	},
+	"c": {
+	 "item": "randogeek:emptycup"
+	}
+  },
+  "result": {
+    "item": "randogeek:emptybigcup"
+  }
+}

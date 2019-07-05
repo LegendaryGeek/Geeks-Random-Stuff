@@ -38,6 +38,7 @@ public final class ClientEventHandler {
 	@SubscribeEvent
 	public static void registerModels(final ModelRegistryEvent event) {
 		registerModel(Item.getItemFromBlock(ModBlocks.BlockPlastic));
+		registerModel(Item.getItemFromBlock(ModBlocks.CoffeeOre));
 		registerFluidRender(ModBlocks.COFFEE, ModFluids.COFFEE);
 		registerModel(ModItems.CoffeeBean);
 		registerModel(ModItems.CoffeePot);
@@ -54,6 +55,13 @@ public final class ClientEventHandler {
 		registerModel(ModItems.CoffeeCaramelPopcorn);
 		registerModel(ModItems.GoldCaramelPopcorn);
 		registerModel(ModItems.LavaCaramelPopcorn);
+		registerModel(ModItems.Emptycup);
+		registerModel(ModItems.EmptyBigCup);
+		registerModel(ModItems.Coffeecup);
+		registerModel(ModItems.CoffeeBigcup);
+		registerModel(ModItems.Lavacup);
+		registerModel(ModItems.LavaBigcup);
+
 	}
 
 	/**

@@ -10,21 +10,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class GeekTab extends CreativeTabs {
 
 	public static GeekTab instance = null;
+
 	public GeekTab() {
 		super(RandoGeek.MODID);
 	}
-	
-	public static void init()
-	{
+
+	public static void init() {
 		instance = new GeekTab();
 	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public ItemStack createIcon() {
-		// TODO Auto-generated method stub
 		return new ItemStack(ModItems.CoffeePot);
 	}
-	
+
 	public CreativeTabs getCTab() {
 		return this;
 	}

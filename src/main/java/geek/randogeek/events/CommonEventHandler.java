@@ -61,6 +61,7 @@ public final class CommonEventHandler {
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		event.getRegistry().register(setupBlock(ModBlocks.BlockPlastic, "blockplastic"));
+		event.getRegistry().register(setupBlock(ModBlocks.CoffeeOre, "coffeeore"));
 		event.getRegistry().register(setupBlock(new BlockFluidClassic(ModFluids.COFFEE, Material.WATER), "coffee"));
 	}
 
@@ -71,10 +72,17 @@ public final class CommonEventHandler {
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
 		event.getRegistry().register(setupItemBlock(ModBlocks.BlockPlastic));
+		event.getRegistry().register(setupItemBlock(ModBlocks.CoffeeOre));
 		// event.getRegistry().register(setupItemBlock(ModBlocks.COFFEE));
 		event.getRegistry().register(setupItem(ModItems.Plastic, "plastic"));
 		event.getRegistry().register(setupItem(ModItems.CoffeePot, "coffeepot"));
 		event.getRegistry().register(setupItem(ModItems.EmptyPot, "emptypot"));
+		event.getRegistry().register(setupItem(ModItems.Emptycup, "emptycup"));
+		event.getRegistry().register(setupItem(ModItems.EmptyBigCup, "emptybigcup"));
+		event.getRegistry().register(setupItem(ModItems.Coffeecup, "coffeecup"));
+		event.getRegistry().register(setupItem(ModItems.Lavacup, "lavacup"));
+		event.getRegistry().register(setupItem(ModItems.CoffeeBigcup, "bigcoffeecup"));
+		event.getRegistry().register(setupItem(ModItems.LavaBigcup, "biglavacup"));
 		event.getRegistry().register(setupItem(ModItems.LavaPot, "lavapot"));
 		event.getRegistry().register(setupItem(ModItems.plaStick, "plastick"));
 		event.getRegistry().register(setupItem(ModItems.CoffeeBean, "coffeebean"));

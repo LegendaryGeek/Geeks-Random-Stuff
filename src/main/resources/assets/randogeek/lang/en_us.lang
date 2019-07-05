@@ -8,6 +8,21 @@ item.randogeek.emptypot.name=Empty Pot
 item.randogeek.lavapot.name=Lava Pot
 item.randogeek.emptypot.tooltip=Uses Left:
 item.randogeek.potlid.name=Coffee pot Lid
+item.randogeek.pothandle.name=Coffee pot Handle
 item.randogeek.potbase.name=Coffee pot base
+item.randogeek.bigcoffeecup.name=Big Coffee Cup
+item.randogeek.biglavacup.name=Big Lava Cup
+item.randogeek.coffeecup.name=Coffee Cup
+item.randogeek.lavacup.name=Lava Cup
+item.randogeek.emptycup.name=Empty Cup
+item.randogeek.emptybigcup.name=Big Empty Cup
+item.randogeek.caramelpopcorn.name=Caramel Popcorn
+item.randogeek.goldcaramelpopcorn.name=Golden Caramel Popcorn
+item.randogeek.coffeecaramelpopcorn.name=Coffee Flavoured Caramel Popcorn
+item.randogeek.lavacaramelpopcorn.name=Lava Flavoured Caramel Popcorn
+
+itemGroup.randogeek=Geek's Random Stuff
 
 tile.randogeek.blockplastic.name=Plastic Block
+tile.randogeek.coffee.name=Coffee
+tile.randogeek.coffeeore.name=Coffee Ore

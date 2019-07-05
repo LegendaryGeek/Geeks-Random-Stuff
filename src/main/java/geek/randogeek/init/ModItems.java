@@ -3,6 +3,7 @@ package geek.randogeek.init;
 import geek.randogeek.RandoGeek;
 import geek.randogeek.item.CaramelPopcorn;
 import geek.randogeek.item.CoffeeBean;
+import geek.randogeek.item.EmptyBigCup;
 import geek.randogeek.item.EmptyCup;
 import geek.randogeek.item.EmptyPot;
 import geek.randogeek.item.Plastic;
@@ -25,20 +26,30 @@ public final class ModItems {
 		//
 	}
 
-	/**
-	 *
-	 */
+	// Plastic
+
 	@ObjectHolder("randogeek:plastic")
 	public static final Item Plastic = new Plastic();
 
 	@ObjectHolder("randogeek:plastick")
 	public static final Item plaStick = new plaStick();
 
+	// Coffee Stuffs
+
 	@ObjectHolder("randogeek:coffeebean")
 	public static final Item CoffeeBean = new CoffeeBean();
 
 	@ObjectHolder("randogeek:emptypot")
 	public static final Item EmptyPot = new EmptyPot(Blocks.AIR);
+
+	@ObjectHolder("randogeek:emptybigcup")
+	public static final Item EmptyBigCup = new EmptyBigCup(Blocks.AIR);
+
+	@ObjectHolder("randogeek:coffeebigcup")
+	public static final Item CoffeeBigcup = new EmptyBigCup(ModBlocks.COFFEE, "coffee").setContainerItem(EmptyBigCup);
+
+	@ObjectHolder("randogeek:lavabigcup")
+	public static final Item LavaBigcup = new EmptyBigCup(Blocks.LAVA, "lava").setContainerItem(EmptyBigCup);
 
 	@ObjectHolder("randogeek:coffeepot")
 	public static final Item CoffeePot = new EmptyPot(ModBlocks.COFFEE).setContainerItem(EmptyPot);
@@ -50,17 +61,11 @@ public final class ModItems {
 	public static final Item Emptycup = new EmptyCup(Blocks.AIR);
 
 	@ObjectHolder("randogeek:coffeecup")
-	public static final Item Coffeecup = new EmptyCup(ModBlocks.COFFEE).setContainerItem(Emptycup);
+	public static final Item Coffeecup = new EmptyCup(ModBlocks.COFFEE, "coffee").setContainerItem(Emptycup);
 
 	@ObjectHolder("randogeek:lavacup")
-	public static final Item Lavacup = new EmptyCup(Blocks.LAVA).setContainerItem(Emptycup);
-	
-	@ObjectHolder("randogeek:fork")
-	public static final Item Fork = new Item();
+	public static final Item Lavacup = new EmptyCup(Blocks.LAVA, "lava").setContainerItem(Emptycup);
 
-	@ObjectHolder("randogeek:forkedapple")
-	public static final Item ForkedApple = new Item();
-	
 	@ObjectHolder("randogeek:potlid")
 	public static final Item PotLid = new Item();
 
@@ -69,6 +74,8 @@ public final class ModItems {
 
 	@ObjectHolder("randogeek:pothandle")
 	public static final Item PotHandle = new Item();
+
+	// 4 types of caramel popcorn
 
 	@ObjectHolder("randogeek:caramelpopcorn")
 	public static final Item CaramelPopcorn = new CaramelPopcorn(4, "original");
@@ -81,5 +88,16 @@ public final class ModItems {
 
 	@ObjectHolder("randogeek:lavacaramelpopcorn")
 	public static final Item LavaCaramelPopcorn = new CaramelPopcorn(4, "lava");
+
+	// Forked OSes
+
+	@ObjectHolder("randogeek:fork")
+	public static final Item Fork = new Item();
+
+	@ObjectHolder("randogeek:forkedapple")
+	public static final Item ForkedApple = new Item();
+
+	@ObjectHolder("randogeek:forkedwindow")
+	public static final Item ForkedWindow = new Item();
 
 }

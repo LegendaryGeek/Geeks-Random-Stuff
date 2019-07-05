@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "pc",
+    "c "
+  ],
+  "key": {
+    "p": {
+      "item": "randogeek:lavapot"
+    },
+	"c": {
+	 "item": "randogeek:emptybigcup"
+	}
+  },
+  "result": {
+    "item": "randogeek:biglavacup",
+    "count": 2
+  }
+}

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import geek.randogeek.proxy.Proxy;
 import geek.randogeek.util.GeekTab;
+import geek.randogeek.world.OreGenerator;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +14,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInterModComms.IMCEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  *
@@ -31,7 +33,7 @@ public final class RandoGeek {
 	public static final String NAME = "Geek's Random Stuff";
 
 	/** Version of this Mod. */
-	public static final String VERSION = "0.0.0";
+	public static final String VERSION = "1.0.0";
 //	public static final String VERSION = "@MOD_VERSION@"
 
 	/**
@@ -74,6 +76,8 @@ public final class RandoGeek {
 	public static void preInit(final FMLPreInitializationEvent event) {
 		FluidRegistry.enableUniversalBucket();
 		proxy.preInit(event);
+		GameRegistry.registerWorldGenerator(new OreGenerator(), 3);
+		GeekTab.init();
 	}
 
 	/**
@@ -83,7 +87,6 @@ public final class RandoGeek {
 	@Mod.EventHandler
 	public static void init(final FMLInitializationEvent event) {
 		proxy.init(event);
-		GeekTab.init();	
 	}
 
 	/**

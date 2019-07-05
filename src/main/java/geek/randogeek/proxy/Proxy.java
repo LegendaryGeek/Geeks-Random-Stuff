@@ -1,5 +1,6 @@
 package geek.randogeek.proxy;
 
+import geek.randogeek.init.ModBlocks;
 import geek.randogeek.init.ModFluids;
 import geek.randogeek.init.ModItems;
 import net.minecraft.init.Items;
@@ -30,7 +31,10 @@ public abstract class Proxy {
 	 * @param event The Event.
 	 */
 	public void init(final FMLInitializationEvent event) {
-		FurnaceRecipes.instance().addSmeltingRecipe( new ItemStack(Items.COAL, 1, 1), new ItemStack(ModItems.Plastic), 0.4F);	}
+		FurnaceRecipes.instance().addSmeltingRecipe( new ItemStack(Items.COAL, 1, 1), new ItemStack(ModItems.Plastic), 0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock( ModBlocks.CoffeeOre, new ItemStack(ModItems.CoffeeBean), 0.4F);	
+		}
+	
 
 	/**
 	 *
