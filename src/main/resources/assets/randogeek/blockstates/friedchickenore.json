@@ -1,0 +1,10 @@
+{ 
+  "forge_marker": 1,
+  "defaults": {
+    "model": "randogeek:friedchickenore"
+  },
+ "variants": {
+    "normal": [{"model": "randogeek:friedchickenore"}],
+    "inventory": [{"model": "randogeek:friedchickenore"}]
+    }
+}

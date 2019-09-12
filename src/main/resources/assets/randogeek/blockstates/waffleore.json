@@ -1,0 +1,10 @@
+{ 
+  "forge_marker": 1,
+  "defaults": {
+    "model": "randogeek:waffleore"
+  },
+ "variants": {
+    "normal": [{"model": "randogeek:waffleore"}],
+    "inventory": [{"model": "randogeek:waffleore"}]
+    }
+}

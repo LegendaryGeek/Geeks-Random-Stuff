@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "gcg",
+	"gpg",
+	"ggg"
+  ],
+  "key": {
+	"c": {
+	 "item": "randogeek:caramel"
+	},
+	"p": {
+	 "item": "randogeek:popcorn"
+	},
+	"g": {
+	 "item": "minecraft:gold_nugget"
+	}
+  },
+  "result": {
+    "item": "randogeek:goldencaramelpopcorn"
+  }
+}

@@ -26,9 +26,29 @@ public final class ClientEventHandler {
 
 	/**
 	 *
+	 * @param block The Block.
+	 * @param fluid The Fluid.
 	 */
-	private ClientEventHandler() {
-		//
+	@SideOnly(Side.CLIENT)
+	private static void registerFluidRender(final Block block, final Fluid fluid) {
+		final Item item = Item.getItemFromBlock(block);
+		final ResourceLocation resourceLocation = new ResourceLocation(RandoGeek.MODID, fluid.getName());
+		final FluidStateMapper mapper = new FluidStateMapper(resourceLocation.getNamespace() + ":" + fluid.getName());
+
+		if (item != null) {
+			ModelBakery.registerItemVariants(item);
+			ModelLoader.setCustomMeshDefinition(item, mapper);
+		}
+		ModelLoader.setCustomStateMapper(block, mapper);
+	}
+
+	/**
+	 *
+	 * @param item The Item.
+	 */
+	private static void registerModel(final Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0,
+				new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 
 	/**
@@ -39,6 +59,15 @@ public final class ClientEventHandler {
 	public static void registerModels(final ModelRegistryEvent event) {
 		registerModel(Item.getItemFromBlock(ModBlocks.BlockPlastic));
 		registerModel(Item.getItemFromBlock(ModBlocks.CoffeeOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.CakeOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.CaramelOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.CookieOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.FriedChickenOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.FrostedCookieOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.IcecreamSandwichOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.IceOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.PopcornOre));
+		registerModel(Item.getItemFromBlock(ModBlocks.WaffleOre));
 		registerFluidRender(ModBlocks.COFFEE, ModFluids.COFFEE);
 		registerModel(ModItems.CoffeeBean);
 		registerModel(ModItems.CoffeePot);
@@ -61,33 +90,40 @@ public final class ClientEventHandler {
 		registerModel(ModItems.CoffeeBigcup);
 		registerModel(ModItems.Lavacup);
 		registerModel(ModItems.LavaBigcup);
+		registerModel(ModItems.IcePickaxe);
+		registerModel(ModItems.IceAxe);
+		registerModel(ModItems.IceShovel);
+		registerModel(ModItems.IceSword);
+		registerModel(ModItems.IceHoe);		
+		registerModel(ModItems.IceBooties);		
+		registerModel(ModItems.IceLegs);		
+		registerModel(ModItems.IceChestplate);		
+		registerModel(ModItems.IceHelm);
+		registerModel(ModItems.DirtPickaxe);
+		registerModel(ModItems.DirtAxe);
+		registerModel(ModItems.DirtShovel);
+		registerModel(ModItems.DirtSword);
+		registerModel(ModItems.DirtHoe);		
+		registerModel(ModItems.DirtBoots);		
+		registerModel(ModItems.Dirtlegs);		
+		registerModel(ModItems.DirtChestplate);		
+		registerModel(ModItems.DirtHelmet);	
+		registerModel(ModItems.Caramel);		
+		registerModel(ModItems.FriedChicken);		
+		registerModel(ModItems.FrostedCookie);		
+		registerModel(ModItems.IceCreamSandwhich);		
+		registerModel(ModItems.Popcorn);		
+		registerModel(ModItems.waffle);
+		
+		
+	
 
 	}
 
 	/**
 	 *
-	 * @param item The Item.
 	 */
-	private static void registerModel(final Item item) {
-		ModelLoader.setCustomModelResourceLocation(item, 0,
-				new ModelResourceLocation(item.getRegistryName(), "inventory"));
-	}
-
-	/**
-	 *
-	 * @param block The Block.
-	 * @param fluid The Fluid.
-	 */
-	@SideOnly(Side.CLIENT)
-	private static void registerFluidRender(final Block block, final Fluid fluid) {
-		final Item item = Item.getItemFromBlock(block);
-		final ResourceLocation resourceLocation = new ResourceLocation(RandoGeek.MODID, fluid.getName());
-		final FluidStateMapper mapper = new FluidStateMapper(resourceLocation.getNamespace() + ":" + fluid.getName());
-
-		if (item != null) {
-			ModelBakery.registerItemVariants(item);
-			ModelLoader.setCustomMeshDefinition(item, mapper);
-		}
-		ModelLoader.setCustomStateMapper(block, mapper);
+	private ClientEventHandler() {
+		//
 	}
 }

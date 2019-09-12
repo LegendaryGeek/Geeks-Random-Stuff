@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "cp"
+  ],
+  "key": {
+	"c": {
+	 "item": "randogeek:caramel"
+	},
+	"p": {
+	 "item": "randogeek:popcorn"
+	}
+  },
+  "result": {
+    "item": "randogeek:caramelpopcorn"
+  }
+}

@@ -1,0 +1,10 @@
+{ 
+  "forge_marker": 1,
+  "defaults": {
+    "model": "randogeek:iceore"
+  },
+ "variants": {
+    "normal": [{"model": "randogeek:iceore"}],
+    "inventory": [{"model": "randogeek:iceore"}]
+    }
+}

@@ -26,6 +26,24 @@ public class OreGenerator implements IWorldGenerator {
 			IChunkProvider chunkProvider) {
 		generateOre(ModBlocks.CoffeeOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
 				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.CakeOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.CaramelOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.CookieOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.FriedChickenOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.FrostedCookieOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.IcecreamSandwichOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.IceOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.PopcornOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
+		generateOre(ModBlocks.WaffleOre.getDefaultState(), world, random, chunkX * 16, chunkY * 16, 5, 100,
+				1 + random.nextInt(16), 10);
 
 	}
 

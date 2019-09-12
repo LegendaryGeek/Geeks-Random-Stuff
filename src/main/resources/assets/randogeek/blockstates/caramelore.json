@@ -1,0 +1,10 @@
+{ 
+  "forge_marker": 1,
+  "defaults": {
+    "model": "randogeek:caramelore"
+  },
+ "variants": {
+    "normal": [{"model": "randogeek:caramelore"}],
+    "inventory": [{"model": "randogeek:caramelore"}]
+    }
+}

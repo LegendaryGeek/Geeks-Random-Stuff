@@ -1,0 +1,10 @@
+{ 
+  "forge_marker": 1,
+  "defaults": {
+    "model": "randogeek:popcornore"
+  },
+ "variants": {
+    "normal": [{"model": "randogeek:popcornore"}],
+    "inventory": [{"model": "randogeek:popcornore"}]
+    }
+}

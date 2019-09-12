@@ -1,0 +1,10 @@
+{ 
+  "forge_marker": 1,
+  "defaults": {
+    "model": "randogeek:frostedcookieore"
+  },
+ "variants": {
+    "normal": [{"model": "randogeek:frostedcookieore"}],
+    "inventory": [{"model": "randogeek:frostedcookieore"}]
+    }
+}

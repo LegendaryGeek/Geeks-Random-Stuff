@@ -3,6 +3,7 @@ package geek.randogeek.proxy;
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.init.ModFluids;
 import geek.randogeek.init.ModItems;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -31,10 +32,26 @@ public abstract class Proxy {
 	 * @param event The Event.
 	 */
 	public void init(final FMLInitializationEvent event) {
-		FurnaceRecipes.instance().addSmeltingRecipe( new ItemStack(Items.COAL, 1, 1), new ItemStack(ModItems.Plastic), 0.4F);
-		FurnaceRecipes.instance().addSmeltingRecipeForBlock( ModBlocks.CoffeeOre, new ItemStack(ModItems.CoffeeBean), 0.4F);	
-		}
-	
+		FurnaceRecipes.instance().addSmeltingRecipe(new ItemStack(Items.COAL, 1, 1), new ItemStack(ModItems.Plastic),
+				0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.CoffeeOre, new ItemStack(ModItems.CoffeeBean),
+				0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.CakeOre, new ItemStack(Items.CAKE), 0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.IceOre, new ItemStack(Blocks.ICE), 0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.CookieOre, new ItemStack(Items.COOKIE), 0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.FrostedCookieOre,
+				new ItemStack(ModItems.FrostedCookie), 0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.IcecreamSandwichOre,
+				new ItemStack(ModItems.IceCreamSandwhich), 0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.FriedChickenOre,
+				new ItemStack(ModItems.FriedChicken), 0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.PopcornOre, new ItemStack(ModItems.Popcorn),
+				0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.CaramelOre, new ItemStack(ModItems.Caramel),
+				0.4F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(ModBlocks.WaffleOre, new ItemStack(ModItems.waffle), 0.4F);
+
+	}
 
 	/**
 	 *
@@ -52,6 +69,8 @@ public abstract class Proxy {
 		//
 	}
 
-	public World getWorld() { return null; }
+	public World getWorld() {
+		return null;
+	}
 
 }

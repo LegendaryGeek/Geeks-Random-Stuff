@@ -1,11 +1,16 @@
 package geek.randogeek.item;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.init.ModItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -22,6 +27,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EmptyPot extends ItemBucket {
 	/** field for checking if the bucket has been filled. */
@@ -127,9 +134,9 @@ public class EmptyPot extends ItemBucket {
 	 /**
      * allows items to add custom lines of information to the mouseover description
      */
-   /* @SideOnly(Side.CLIENT)
+   @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
     {
     	tooltip.add(this.getTranslationKey());
-    }*/
+    }
 }
