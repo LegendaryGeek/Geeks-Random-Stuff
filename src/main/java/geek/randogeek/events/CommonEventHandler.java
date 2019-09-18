@@ -1,7 +1,5 @@
 package geek.randogeek.events;
 
-
-
 import geek.randogeek.RandoGeek;
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.init.ModFluids;
@@ -25,6 +23,7 @@ import net.minecraftforge.fml.relauncher.Side;
 @Mod.EventBusSubscriber(value = { Side.CLIENT, Side.SERVER }, modid = RandoGeek.MODID)
 public final class CommonEventHandler {
 	protected static java.util.Random RANDOM = new java.util.Random();
+
 	/**
 	 *
 	 * @param event The Event.
@@ -32,16 +31,18 @@ public final class CommonEventHandler {
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		event.getRegistry().register(setupBlock(ModBlocks.BlockPlastic, "blockplastic"));
-		event.getRegistry().register(setupBlock(ModBlocks.CoffeeOre, "coffeeore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.CakeOre, "cakeore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.CaramelOre, "caramelore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.CookieOre, "cookieore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.FriedChickenOre, "friedchickenore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.FrostedCookieOre, "frostedcookieore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.IcecreamSandwichOre, "icecreamsandwhichore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.IceOre, "iceore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.PopcornOre, "popcornore")); 
-		event.getRegistry().register(setupBlock(ModBlocks.WaffleOre, "waffleore")); 
+		event.getRegistry().register(setupBlock(ModBlocks.FoodInfuser, "foodinfuser"));
+		event.getRegistry().register(setupBlock(ModBlocks.Lit_FoodInfuser, "lit_foodinfuser"));
+		event.getRegistry().register(setupBlock(ModBlocks.CoffeeOre, "coffeeore"));
+		event.getRegistry().register(setupBlock(ModBlocks.CakeOre, "cakeore"));
+		event.getRegistry().register(setupBlock(ModBlocks.CaramelOre, "caramelore"));
+		event.getRegistry().register(setupBlock(ModBlocks.CookieOre, "cookieore"));
+		event.getRegistry().register(setupBlock(ModBlocks.FriedChickenOre, "friedchickenore"));
+		event.getRegistry().register(setupBlock(ModBlocks.FrostedCookieOre, "frostedcookieore"));
+		event.getRegistry().register(setupBlock(ModBlocks.IcecreamSandwichOre, "icecreamsandwhichore"));
+		event.getRegistry().register(setupBlock(ModBlocks.IceOre, "iceore"));
+		event.getRegistry().register(setupBlock(ModBlocks.PopcornOre, "popcornore"));
+		event.getRegistry().register(setupBlock(ModBlocks.WaffleOre, "waffleore"));
 		event.getRegistry().register(setupBlock(new BlockFluidClassic(ModFluids.COFFEE, Material.WATER), "coffee"));
 	}
 
@@ -52,6 +53,8 @@ public final class CommonEventHandler {
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
 		event.getRegistry().register(setupItemBlock(ModBlocks.BlockPlastic));
+		event.getRegistry().register(setupItemBlock(ModBlocks.FoodInfuser));
+		event.getRegistry().register(setupItemBlock(ModBlocks.Lit_FoodInfuser));
 		event.getRegistry().register(setupItemBlock(ModBlocks.CoffeeOre));
 		event.getRegistry().register(setupItemBlock(ModBlocks.CakeOre));
 		event.getRegistry().register(setupItemBlock(ModBlocks.CaramelOre));
@@ -64,7 +67,7 @@ public final class CommonEventHandler {
 		event.getRegistry().register(setupItemBlock(ModBlocks.WaffleOre));
 		// event.getRegistry().register(setupItemBlock(ModBlocks.COFFEE));
 		event.getRegistry().register(setupItem(ModItems.Plastic, "plastic"));
-		
+
 		event.getRegistry().register(setupItem(ModItems.CoffeePot, "coffeepot"));
 		event.getRegistry().register(setupItem(ModItems.EmptyPot, "emptypot"));
 		event.getRegistry().register(setupItem(ModItems.Emptycup, "emptycup"));
@@ -76,10 +79,10 @@ public final class CommonEventHandler {
 		event.getRegistry().register(setupItem(ModItems.LavaPot, "lavapot"));
 		event.getRegistry().register(setupItem(ModItems.plaStick, "plastick"));
 		event.getRegistry().register(setupItem(ModItems.CoffeeBean, "coffeebean"));
-		
+
 		event.getRegistry().register(setupItem(ModItems.Fork, "fork"));
 		event.getRegistry().register(setupItem(ModItems.ForkedApple, "forkedapple"));
-		
+
 		event.getRegistry().register(setupItem(ModItems.PotBase, "potbase"));
 		event.getRegistry().register(setupItem(ModItems.PotHandle, "pothandle"));
 		event.getRegistry().register(setupItem(ModItems.PotLid, "potlid"));
@@ -88,7 +91,7 @@ public final class CommonEventHandler {
 		event.getRegistry().register(setupItem(ModItems.GoldCaramelPopcorn, "goldcaramelpopcorn"));
 		event.getRegistry().register(setupItem(ModItems.CoffeeCaramelPopcorn, "coffeecaramelpopcorn"));
 		event.getRegistry().register(setupItem(ModItems.LavaCaramelPopcorn, "lavacaramelpopcorn"));
-		
+
 		event.getRegistry().register(setupItem(ModItems.IcePickaxe, "icepickaxe"));
 		event.getRegistry().register(setupItem(ModItems.IceAxe, "iceaxe"));
 		event.getRegistry().register(setupItem(ModItems.IceShovel, "iceshovel"));
@@ -98,7 +101,7 @@ public final class CommonEventHandler {
 		event.getRegistry().register(setupItem(ModItems.IceLegs, "iceleggings"));
 		event.getRegistry().register(setupItem(ModItems.IceChestplate, "icechestplate"));
 		event.getRegistry().register(setupItem(ModItems.IceHelm, "icehelm"));
-		
+
 		event.getRegistry().register(setupItem(ModItems.DirtPickaxe, "dirtpickaxe"));
 		event.getRegistry().register(setupItem(ModItems.DirtAxe, "dirtaxe"));
 		event.getRegistry().register(setupItem(ModItems.DirtShovel, "dirtshovel"));
@@ -108,7 +111,7 @@ public final class CommonEventHandler {
 		event.getRegistry().register(setupItem(ModItems.Dirtlegs, "dirtleggings"));
 		event.getRegistry().register(setupItem(ModItems.DirtChestplate, "dirtchestplate"));
 		event.getRegistry().register(setupItem(ModItems.DirtHelmet, "dirthelm"));
-		
+
 		event.getRegistry().register(setupItem(ModItems.IceCreamSandwhich, "icecreamsandwhich"));
 		event.getRegistry().register(setupItem(ModItems.FriedChicken, "friedchicken"));
 		event.getRegistry().register(setupItem(ModItems.FrostedCookie, "frostedcookie"));

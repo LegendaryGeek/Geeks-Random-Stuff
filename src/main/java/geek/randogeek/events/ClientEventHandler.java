@@ -58,6 +58,8 @@ public final class ClientEventHandler {
 	@SubscribeEvent
 	public static void registerModels(final ModelRegistryEvent event) {
 		registerModel(Item.getItemFromBlock(ModBlocks.BlockPlastic));
+		registerModel(Item.getItemFromBlock(ModBlocks.FoodInfuser));
+		registerModel(Item.getItemFromBlock(ModBlocks.Lit_FoodInfuser));
 		registerModel(Item.getItemFromBlock(ModBlocks.CoffeeOre));
 		registerModel(Item.getItemFromBlock(ModBlocks.CakeOre));
 		registerModel(Item.getItemFromBlock(ModBlocks.CaramelOre));

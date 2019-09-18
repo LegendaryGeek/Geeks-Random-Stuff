@@ -2,7 +2,6 @@ package geek.randogeek.block;
 
 import java.util.Random;
 
-import geek.legendarywinter.blocks.randomTick;
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.tileentity.TEFoodInfuser;
 import net.minecraft.block.BlockContainer;
@@ -144,16 +143,16 @@ public class FoodInfuser extends BlockContainer {
 
 		if (active) {
 			worldIn.setBlockState(pos,
-					ModBlocks.Lit_SnowFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)),
+					ModBlocks.Lit_FoodInfuser.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)),
 					3);
 			worldIn.setBlockState(pos,
-					ModBlocks.Lit_SnowFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)),
+					ModBlocks.Lit_FoodInfuser.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)),
 					3);
 		} else {
 			worldIn.setBlockState(pos,
-					ModBlocks.SnowFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+					ModBlocks.FoodInfuser.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
 			worldIn.setBlockState(pos,
-					ModBlocks.SnowFurnace.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+					ModBlocks.FoodInfuser.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
 		}
 
 		keepInventory = false;
@@ -216,7 +215,7 @@ public class FoodInfuser extends BlockContainer {
 	}
 
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
-		return new ItemStack(ModBlocks.SnowFurnace);
+		return new ItemStack(ModBlocks.FoodInfuser);
 	}
 
 	/**

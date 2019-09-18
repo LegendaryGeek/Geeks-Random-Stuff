@@ -404,7 +404,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	}
 
 	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-		return new containerFoodInfuser(playerInventory, this);
+		return new ContainerFoodInfuser(playerInventory, this);
 	}
 
 	public int getField(int id) {

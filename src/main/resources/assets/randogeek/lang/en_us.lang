@@ -48,6 +48,8 @@ item.randogeek.waffle.name=Waffle
 itemGroup.randogeek=Geek's Random Stuff
 
 tile.randogeek.blockplastic.name=Plastic Block
+tile.randogeek.foodinfuser.name=Food Infuer
+tile.randogeek.lit_foodinfuser.name=Food Infuer
 tile.randogeek.coffee.name=Coffee
 tile.randogeek.coffeeore.name=Coffee Ore
 tile.randogeek.cakeore.name=Cake Ore

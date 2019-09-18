@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "top": "randogeek:blocks/foodinfuser_top",
+        "front": "randogeek:blocks/foodinfuser_front_on",
+        "side": "randogeek:blocks/foodinfuser_side"
+    }
+}
