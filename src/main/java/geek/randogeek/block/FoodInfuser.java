@@ -12,7 +12,6 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -130,7 +129,7 @@ public class FoodInfuser extends BlockContainer {
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 
 			if (tileentity instanceof TEFoodInfuser) {
-					if (worldIn.isRemote) Minecraft.getMinecraft().displayGuiScreen(new GUIFoodInfuser(playerIn.inventory, (TEFoodInfuser) tileentity));
+				playerIn.displayGUIChest((TEFoodInfuser) tileentity);
 				playerIn.addStat(StatList.FURNACE_INTERACTION);
 			}
 

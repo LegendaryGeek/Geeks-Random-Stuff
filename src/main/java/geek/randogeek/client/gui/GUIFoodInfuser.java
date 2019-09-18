@@ -1,9 +1,9 @@
 package geek.randogeek.client.gui;
 
+import geek.randogeek.inventory.ContainerFoodInfuser;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.ResourceLocation;
@@ -13,14 +13,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GUIFoodInfuser extends GuiContainer
 {
-    private static final ResourceLocation FoodInfuser_GUI_TEXTURES = new ResourceLocation("textures/gui/container/foodinfuser.png");
+    private static final ResourceLocation FoodInfuser_GUI_TEXTURES = new ResourceLocation("randogeek:textures/gui/container/foodinfuser.png");
     /** The player inventory bound to this GUI. */
     private final InventoryPlayer playerInventory;
     private final IInventory tileFoodInfuser;
 
     public GUIFoodInfuser(InventoryPlayer playerInv, IInventory furnaceInv)
     {
-        super(new ContainerFurnace(playerInv, furnaceInv));
+        super(new ContainerFoodInfuser(playerInv, furnaceInv));
         this.playerInventory = playerInv;
         this.tileFoodInfuser = furnaceInv;
     }
