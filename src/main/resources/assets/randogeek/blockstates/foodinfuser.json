@@ -1,8 +1,8 @@
 {
     "variants": {
-        "facing=north": { "model": "foodinfuser" },
-        "facing=south": { "model": "foodinfuser", "y": 180 },
-        "facing=west":  { "model": "foodinfuser", "y": 270 },
-        "facing=east":  { "model": "foodinfuser", "y": 90 }
+        "facing=north": { "model": "randogeek:foodinfuser" },
+        "facing=south": { "model": "randogeek:foodinfuser", "y": 180 },
+        "facing=west":  { "model": "randogeek:foodinfuser", "y": 270 },
+        "facing=east":  { "model": "randogeek:foodinfuser", "y": 90 }
     }
 }
