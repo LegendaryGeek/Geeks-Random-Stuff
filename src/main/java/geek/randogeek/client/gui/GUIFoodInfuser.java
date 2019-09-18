@@ -13,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GUIFoodInfuser extends GuiContainer
 {
-    private static final ResourceLocation FoodInfuser_GUI_TEXTURES = new ResourceLocation("textures/gui/container/furnace.png");
+    private static final ResourceLocation FoodInfuser_GUI_TEXTURES = new ResourceLocation("textures/gui/container/foodinfuser.png");
     /** The player inventory bound to this GUI. */
     private final InventoryPlayer playerInventory;
     private final IInventory tileFoodInfuser;

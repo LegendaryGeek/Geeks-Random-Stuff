@@ -400,7 +400,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	}
 
 	public String getGuiID() {
-		return "minecraft:furnace";
+		return "randogeek:foodinfuser";
 	}
 
 	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {

@@ -2,6 +2,7 @@ package geek.randogeek.block;
 
 import java.util.Random;
 
+import geek.randogeek.client.gui.GUIFoodInfuser;
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.tileentity.TEFoodInfuser;
 import net.minecraft.block.BlockContainer;
@@ -11,6 +12,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -128,7 +130,7 @@ public class FoodInfuser extends BlockContainer {
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 
 			if (tileentity instanceof TEFoodInfuser) {
-				playerIn.displayGUIChest((TEFoodInfuser) tileentity);
+					if (worldIn.isRemote) Minecraft.getMinecraft().displayGuiScreen(new GUIFoodInfuser(playerIn.inventory, (TEFoodInfuser) tileentity));
 				playerIn.addStat(StatList.FURNACE_INTERACTION);
 			}
 
