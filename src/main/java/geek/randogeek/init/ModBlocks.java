@@ -1,6 +1,7 @@
 package geek.randogeek.init;
 
 import geek.randogeek.RandoGeek;
+import geek.randogeek.block.FoodInfuser;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -21,30 +22,36 @@ public final class ModBlocks {
 
 	@ObjectHolder("randogeek:blockplastic")
 	public static final Block BlockPlastic = new Block(Material.CLAY).setHardness(0.3f);
-	
+
+	@ObjectHolder("randogeek:Lit_FoodInfuser")
+	public static final Block Lit_FoodInfuser = new FoodInfuser(true);
+
+	@ObjectHolder("randogeek:FoodInfuser")
+	public static final Block FoodInfuser = new FoodInfuser(false);
+
 	// ORES
-	
+
 	@ObjectHolder("randogeek:coffeeore")
 	public static final Block CoffeeOre = new Block(Material.ROCK);
-	
+
 	@ObjectHolder("randogeek:cakeore")
 	public static final Block CakeOre = new Block(Material.ROCK);
-	
+
 	@ObjectHolder("randogeek:iceore")
 	public static final Block IceOre = new Block(Material.ROCK);
-	
+
 	@ObjectHolder("randogeek:cookieore")
 	public static final Block CookieOre = new Block(Material.ROCK);
-	
+
 	@ObjectHolder("randogeek:frostedcookieore")
 	public static final Block FrostedCookieOre = new Block(Material.ROCK);
-	
+
 	@ObjectHolder("randogeek:icecreamsandwichore")
 	public static final Block IcecreamSandwichOre = new Block(Material.ROCK);
-	
+
 	@ObjectHolder("randogeek:friedchickenore")
 	public static final Block FriedChickenOre = new Block(Material.ROCK);
-	
+
 	@ObjectHolder("randogeek:popcornore")
 	public static final Block PopcornOre = new Block(Material.ROCK);
 
@@ -55,9 +62,9 @@ public final class ModBlocks {
 	public static final Block WaffleOre = new Block(Material.ROCK);
 
 	/**
-	 *fluid blocks
+	 * fluid blocks
 	 */
-	
+
 	@ObjectHolder("randogeek:coffee")
 	public static final Block COFFEE = new Block(Material.WATER);
 }
