@@ -47,6 +47,8 @@ item.randogeek.waffle.name=Waffle
 
 itemGroup.randogeek=Geek's Random Stuff
 
+container.foodinfuser=Food Infuser
+
 tile.randogeek.blockplastic.name=Plastic Block
 tile.randogeek.foodinfuser.name=Food Infuer
 tile.randogeek.lit_foodinfuser.name=Food Infuer

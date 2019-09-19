@@ -2,7 +2,6 @@ package geek.randogeek.block;
 
 import java.util.Random;
 
-import geek.randogeek.client.gui.GUIFoodInfuser;
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.tileentity.TEFoodInfuser;
 import net.minecraft.block.BlockContainer;

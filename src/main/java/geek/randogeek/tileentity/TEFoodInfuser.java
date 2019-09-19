@@ -104,7 +104,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	}
 
 	public String getName() {
-		return this.hasCustomName() ? this.furnaceCustomName : "container.furnace";
+		return this.hasCustomName() ? this.furnaceCustomName : "container.foodinfuser";
 	}
 
 	public boolean hasCustomName() {
