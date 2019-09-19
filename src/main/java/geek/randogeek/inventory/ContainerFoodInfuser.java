@@ -20,8 +20,9 @@ public class ContainerFoodInfuser extends Container {
 	public ContainerFoodInfuser(InventoryPlayer playerInventory, IInventory infuserInventory) {
 		this.tileFoodInfuser = infuserInventory;
 		this.addSlotToContainer(new Slot(infuserInventory, 0, 56, 17));
-		this.addSlotToContainer(new SlotFoodInfuserFuel(infuserInventory, 1, 56, 53));
-		this.addSlotToContainer(new SlotFoodInfuserOutput(playerInventory.player, infuserInventory, 2, 116, 35));
+		this.addSlotToContainer(new Slot(infuserInventory, 1, 22, 17));
+		this.addSlotToContainer(new SlotFoodInfuserFuel(infuserInventory, 2, 56, 53));
+		this.addSlotToContainer(new SlotFoodInfuserOutput(playerInventory.player, infuserInventory, 3, 116, 35));
 
 		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < 9; ++j) {

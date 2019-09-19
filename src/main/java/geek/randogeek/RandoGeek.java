@@ -3,6 +3,7 @@ package geek.randogeek;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import geek.randogeek.client.gui.GuiHandler;
 import geek.randogeek.proxy.Proxy;
 import geek.randogeek.util.GeekTab;
 import geek.randogeek.world.OreGenerator;
@@ -20,6 +21,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInterModComms.IMCEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -46,6 +48,8 @@ public final class RandoGeek {
 	public static final ItemArmor.ArmorMaterial ICE_ARMOR_MATERIAL;
 	public static final ItemArmor.ArmorMaterial DIRT_ARMOR_MATERIAL;
 	public static final HorseArmorType ICE_HORSE_ARMOR;
+	
+	public static GuiHandler guiHandler;
 
 	static {
 		ICE_TOOL_MATERIAL = EnumHelper.addToolMaterial(new ResourceLocation(MODID, "ice").toString(),
@@ -120,6 +124,7 @@ public final class RandoGeek {
 	@Mod.EventHandler
 	public static void init(final FMLInitializationEvent event) {
 		proxy.init(event);
+		NetworkRegistry.INSTANCE.registerGuiHandler(RandoGeek.instance(), guiHandler = new GuiHandler());
 	}
 
 	/**

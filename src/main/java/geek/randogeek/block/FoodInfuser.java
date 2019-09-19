@@ -2,6 +2,7 @@ package geek.randogeek.block;
 
 import java.util.Random;
 
+import geek.randogeek.RandoGeek;
 import geek.randogeek.init.ModBlocks;
 import geek.randogeek.tileentity.TEFoodInfuser;
 import net.minecraft.block.BlockContainer;
@@ -128,7 +129,7 @@ public class FoodInfuser extends BlockContainer {
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 
 			if (tileentity instanceof TEFoodInfuser) {
-				playerIn.displayGUIChest((TEFoodInfuser) tileentity);
+				playerIn.openGui(RandoGeek.instance(), 0, worldIn, tileentity.getPos().getX(), tileentity.getPos().getY(), tileentity.getPos().getZ());
 				playerIn.addStat(StatList.FURNACE_INTERACTION);
 			}
 
