@@ -49,7 +49,7 @@ public class ContainerFoodInfuser extends Container {
 		for (int i = 0; i < this.listeners.size(); ++i) {
 			IContainerListener icontainerlistener = this.listeners.get(i);
 
-			if (this.fuseTime != this.tileFoodInfuser.getField(2)) {
+			if (this.fuseTime != this.tileFoodInfuser.getField(2) ) {
 				icontainerlistener.sendWindowProperty(this, 2, this.tileFoodInfuser.getField(2));
 			}
 

@@ -66,7 +66,7 @@ public class SlotFoodInfuserOutput extends Slot {
         if (!this.player.world.isRemote)
         {
             int i = this.removeCount;
-            float f = FoodInfuser_Recipes.instance().getSmeltingExperience(stack);
+            float f = FoodInfuser_Recipes.instance().getInfusingExperience(stack);
 
             if (f == 0.0F)
             {

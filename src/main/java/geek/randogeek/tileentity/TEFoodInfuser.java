@@ -27,11 +27,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISidedInventory {
-	private static final int[] SLOTS_TOP = new int[] { 0 };
-	private static final int[] SLOTS_BOTTOM = new int[] { 2, 1 };
-	private static final int[] SLOTS_SIDES = new int[] { 1 };
+	private static final int[] SLOTS_TOP = new int[] { 0, 1 };
+	private static final int[] SLOTS_BOTTOM = new int[] { 3, 2 };
+	private static final int[] SLOTS_SIDES = new int[] { 2 };
 	/** The ItemStacks that hold the items currently being used in the furnace */
-	private NonNullList<ItemStack> furnaceItemStacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
+	private NonNullList<ItemStack> infuserItemStacks = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 	/** The number of ticks that the furnace will keep burning */
 	private int furnaceBurnTime;
 	/**
@@ -47,11 +47,11 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	 * Returns the number of slots in the inventory.
 	 */
 	public int getSizeInventory() {
-		return this.furnaceItemStacks.size();
+		return this.infuserItemStacks.size();
 	}
 
 	public boolean isEmpty() {
-		for (ItemStack itemstack : this.furnaceItemStacks) {
+		for (ItemStack itemstack : this.infuserItemStacks) {
 			if (!itemstack.isEmpty()) {
 				return false;
 			}
@@ -64,7 +64,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	 * Returns the stack in the given slot.
 	 */
 	public ItemStack getStackInSlot(int index) {
-		return this.furnaceItemStacks.get(index);
+		return this.infuserItemStacks.get(index);
 	}
 
 	/**
@@ -72,14 +72,14 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	 * them in a new stack.
 	 */
 	public ItemStack decrStackSize(int index, int count) {
-		return ItemStackHelper.getAndSplit(this.furnaceItemStacks, index, count);
+		return ItemStackHelper.getAndSplit(this.infuserItemStacks, index, count);
 	}
 
 	/**
 	 * Removes a stack from the given slot and returns it.
 	 */
 	public ItemStack removeStackFromSlot(int index) {
-		return ItemStackHelper.getAndRemove(this.furnaceItemStacks, index);
+		return ItemStackHelper.getAndRemove(this.infuserItemStacks, index);
 	}
 
 	/**
@@ -87,10 +87,10 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	 * crafting or armor sections).
 	 */
 	public void setInventorySlotContents(int index, ItemStack stack) {
-		ItemStack itemstack = this.furnaceItemStacks.get(index);
+		ItemStack itemstack = this.infuserItemStacks.get(index);
 		boolean flag = !stack.isEmpty() && stack.isItemEqual(itemstack)
 				&& ItemStack.areItemStackTagsEqual(stack, itemstack);
-		this.furnaceItemStacks.set(index, stack);
+		this.infuserItemStacks.set(index, stack);
 
 		if (stack.getCount() > this.getInventoryStackLimit()) {
 			stack.setCount(this.getInventoryStackLimit());
@@ -111,8 +111,8 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 		return this.furnaceCustomName != null && !this.furnaceCustomName.isEmpty();
 	}
 
-	public void setCustomInventoryName(String p_145951_1_) {
-		this.furnaceCustomName = p_145951_1_;
+	public void setCustomInventoryName(String name) {
+		this.furnaceCustomName = name;
 	}
 
 	public static void registerFixesFurnace(DataFixer fixer) {
@@ -122,12 +122,12 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 
 	public void readFromNBT(NBTTagCompound compound) {
 		super.readFromNBT(compound);
-		this.furnaceItemStacks = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
-		ItemStackHelper.loadAllItems(compound, this.furnaceItemStacks);
+		this.infuserItemStacks = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
+		ItemStackHelper.loadAllItems(compound, this.infuserItemStacks);
 		this.furnaceBurnTime = compound.getInteger("BurnTime");
 		this.cookTime = compound.getInteger("CookTime");
 		this.totalCookTime = compound.getInteger("CookTimeTotal");
-		this.currentItemBurnTime = getItemInfuseTime(this.furnaceItemStacks.get(1));
+		this.currentItemBurnTime = getItemInfuseTime(this.infuserItemStacks.get(1));
 
 		if (compound.hasKey("CustomName", 8)) {
 			this.furnaceCustomName = compound.getString("CustomName");
@@ -139,7 +139,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 		compound.setInteger("BurnTime", (short) this.furnaceBurnTime);
 		compound.setInteger("CookTime", (short) this.cookTime);
 		compound.setInteger("CookTimeTotal", (short) this.totalCookTime);
-		ItemStackHelper.saveAllItems(compound, this.furnaceItemStacks);
+		ItemStackHelper.saveAllItems(compound, this.infuserItemStacks);
 
 		if (this.hasCustomName()) {
 			compound.setString("CustomName", this.furnaceCustomName);
@@ -180,9 +180,9 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 		}
 
 		if (!this.world.isRemote) {
-			ItemStack itemstack = this.furnaceItemStacks.get(1);
+			ItemStack itemstack = this.infuserItemStacks.get(1);
 
-			if (this.isBurning() || !itemstack.isEmpty() && !((ItemStack) this.furnaceItemStacks.get(0)).isEmpty()) {
+			if (this.isBurning() || !itemstack.isEmpty() && !((ItemStack) this.infuserItemStacks.get(0)).isEmpty()) {
 				if (!this.isBurning() && this.canSmelt()) {
 					this.furnaceBurnTime = getItemInfuseTime(itemstack);
 					this.currentItemBurnTime = this.furnaceBurnTime;
@@ -196,7 +196,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 
 							if (itemstack.isEmpty()) {
 								ItemStack item1 = item.getContainerItem(itemstack);
-								this.furnaceItemStacks.set(1, item1);
+								this.infuserItemStacks.set(1, item1);
 							}
 						}
 					}
@@ -207,7 +207,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 
 					if (this.cookTime == this.totalCookTime) {
 						this.cookTime = 0;
-						this.totalCookTime = this.getCookTime(this.furnaceItemStacks.get(0));
+						this.totalCookTime = this.getCookTime(this.infuserItemStacks.get(0));
 						this.smeltItem();
 						flag1 = true;
 					}
@@ -238,15 +238,15 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	 * destination stack isn't full, etc.
 	 */
 	private boolean canSmelt() {
-		if (((ItemStack) this.furnaceItemStacks.get(0)).isEmpty()) {
+		if (((ItemStack) this.infuserItemStacks.get(0)).isEmpty()) {
 			return false;
 		} else {
-			ItemStack itemstack = FoodInfuser_Recipes.instance().getInfusingResult(this.furnaceItemStacks.get(0));
+			ItemStack itemstack = FoodInfuser_Recipes.instance().getInfusingResult(this.infuserItemStacks.get(0));
 
 			if (itemstack.isEmpty()) {
 				return false;
 			} else {
-				ItemStack itemstack1 = this.furnaceItemStacks.get(2);
+				ItemStack itemstack1 = this.infuserItemStacks.get(2);
 
 				if (itemstack1.isEmpty()) {
 					return true;
@@ -281,20 +281,20 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	 */
 	public void smeltItem() {
 		if (this.canSmelt()) {
-			ItemStack itemstack = this.furnaceItemStacks.get(0);
+			ItemStack itemstack = this.infuserItemStacks.get(0);
 			ItemStack itemstack1 = FoodInfuser_Recipes.instance().getInfusingResult(itemstack);
-			ItemStack itemstack2 = this.furnaceItemStacks.get(2);
+			ItemStack itemstack2 = this.infuserItemStacks.get(2);
 
 			if (itemstack2.isEmpty()) {
-				this.furnaceItemStacks.set(2, itemstack1.copy());
+				this.infuserItemStacks.set(2, itemstack1.copy());
 			} else if (itemstack2.getItem() == itemstack1.getItem()) {
 				itemstack2.grow(itemstack1.getCount());
 			}
 
 			if (itemstack.getItem() == Item.getItemFromBlock(Blocks.SPONGE) && itemstack.getMetadata() == 1
-					&& !((ItemStack) this.furnaceItemStacks.get(1)).isEmpty()
-					&& ((ItemStack) this.furnaceItemStacks.get(1)).getItem() == Items.BUCKET) {
-				this.furnaceItemStacks.set(1, new ItemStack(Items.WATER_BUCKET));
+					&& !((ItemStack) this.infuserItemStacks.get(1)).isEmpty()
+					&& ((ItemStack) this.infuserItemStacks.get(1)).getItem() == Items.BUCKET) {
+				this.infuserItemStacks.set(1, new ItemStack(Items.WATER_BUCKET));
 			}
 
 			itemstack.shrink(1);
@@ -362,7 +362,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 		} else if (index != 1) {
 			return true;
 		} else {
-			ItemStack itemstack = this.furnaceItemStacks.get(1);
+			ItemStack itemstack = this.infuserItemStacks.get(1);
 			return isItemFuel(stack) || SlotFoodInfuserFuel.isBucket(stack) && itemstack.getItem() != Items.BUCKET;
 		}
 	}
@@ -443,7 +443,7 @@ public class TEFoodInfuser extends TileEntityLockable implements ITickable, ISid
 	}
 
 	public void clear() {
-		this.furnaceItemStacks.clear();
+		this.infuserItemStacks.clear();
 	}
 
 	net.minecraftforge.items.IItemHandler handlerTop = new net.minecraftforge.items.wrapper.SidedInvWrapper(this,

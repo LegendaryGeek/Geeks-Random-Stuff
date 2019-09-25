@@ -5,49 +5,48 @@ import java.util.Map.Entry;
 
 import com.google.common.collect.Maps;
 
-import geek.randogeek.init.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class FoodInfuser_Recipes {
-	private static final FoodInfuser_Recipes SMELTING_BASE = new FoodInfuser_Recipes();
-	/** The list of smelting results. */
-	private final Map<ItemStack, ItemStack> smeltingList = Maps.<ItemStack, ItemStack>newHashMap();
+	private static final FoodInfuser_Recipes INFUSING_BASE = new FoodInfuser_Recipes();
+	/** The list of infusing results. */
+	private final Map<ItemStack, ItemStack> infuserList = Maps.<ItemStack, ItemStack>newHashMap();
 	/**
 	 * A list which contains how many experience points each recipe output will
 	 * give.
 	 */
 	private final Map<ItemStack, Float> experienceList = Maps.<ItemStack, Float>newHashMap();
+	
+//	private Ingredient input1;
+//	private Ingredient input2;
+//	private ItemStack output;
 
 	public static FoodInfuser_Recipes instance() {
-		return SMELTING_BASE;
+		return INFUSING_BASE;
 	}
 
 	private FoodInfuser_Recipes() {
-//		this.addInfusingRecipeForBlock(Blocks.SNOW, new ItemStack(ModItems.polarium_ingot, 2), 5.5f);
-//		this.addInfusingRecipe(new ItemStack(ModItems.strangesnowball),
-//				new ItemStack(ModItems.polarium_ingot), 10000.5f);
-//		this.addInfusingRecipeForBlock(Blocks.ICE, new ItemStack(Blocks.PACKED_ICE), 5.5f);
+
 	}
 
 	/**
-	 * Adds a smelting recipe, where the input item is an instance of Block.
+	 * Adds a infusing recipe, where the input item is an instance of Block.
 	 */
 	public void addInfusingRecipeForBlock(Block input, ItemStack stack, float experience) {
 		this.addInfuse(Item.getItemFromBlock(input), stack, experience);
 	}
 
 	/**
-	 * Adds a smelting recipe using an Item as the input item.
+	 * Adds a infusing recipe using an Item as the input item.
 	 */
 	public void addInfuse(Item input, ItemStack stack, float experience) {
 		this.addInfusingRecipe(new ItemStack(input, 1, 32767), stack, experience);
 	}
 
 	/**
-	 * Adds a smelting recipe using an ItemStack as the input for the recipe.
+	 * Adds a infusing recipe using an ItemStack as the input for the recipe.
 	 */
 	public void addInfusingRecipe(ItemStack input, ItemStack stack, float experience) {
 		if (getInfusingResult(input) != ItemStack.EMPTY) {
@@ -55,15 +54,15 @@ public class FoodInfuser_Recipes {
 					input, stack);
 			return;
 		}
-		this.smeltingList.put(input, stack);
+		this.infuserList.put(input, stack);
 		this.experienceList.put(stack, Float.valueOf(experience));
 	}
 
 	/**
-	 * Returns the smelting result of an item.
+	 * Returns the infusing result of an item.
 	 */
 	public ItemStack getInfusingResult(ItemStack stack) {
-		for (Entry<ItemStack, ItemStack> entry : this.smeltingList.entrySet()) {
+		for (Entry<ItemStack, ItemStack> entry : this.infuserList.entrySet()) {
 			if (this.compareItemStacks(stack, entry.getKey())) {
 				return entry.getValue();
 			}
@@ -81,11 +80,11 @@ public class FoodInfuser_Recipes {
 				&& (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata());
 	}
 
-	public Map<ItemStack, ItemStack> getSmeltingList() {
-		return this.smeltingList;
+	public Map<ItemStack, ItemStack> getInfusingList() {
+		return this.infuserList;
 	}
 
-	public float getSmeltingExperience(ItemStack stack) {
+	public float getInfusingExperience(ItemStack stack) {
 		float ret = stack.getItem().getSmeltingExperience(stack);
 		if (ret != -1)
 			return ret;
